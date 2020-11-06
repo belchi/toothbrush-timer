@@ -16,9 +16,9 @@ int count = 1;
 const char *nere = "Borsta nere";
 const char *uppe = "Borsta uppe";
 const char *msg = nere;
-unsigned long DELAY_TIME = 1000; // 1.5 sec
-unsigned long delayStart = 0;    // the time the delay started
-bool delayRunning = false;       // true if still waiting for delay to finish
+unsigned long DELAY_TIME = 1000;
+unsigned long delayStart = 0;
+bool delayRunning = false;
 
 void setup(void)
 {
@@ -32,7 +32,7 @@ void loop(void)
 {
   if (delayRunning && ((millis() - delayStart) >= DELAY_TIME))
   {
-    delayStart += DELAY_TIME; // this prevents drift in the delays
+    delayStart += DELAY_TIME;
     u8g2.clearBuffer();
     u8g2.setFont(u8g2_font_8x13_tf);
 
